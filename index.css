@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.wrapper{
+
+    overflow: hidden;
+    /* 消除浮动的影响，即使子元素是浮动元素，也可以撑开父级。 */
+    /* 子元素浮动后，父元素自动撑开的办法，一般都是高度：
+    一，子元素最后加上<div style="clear:both"></div>
+    二，父元素中设置overflow:hidden;属性 */
+    /* 正常父元素包含浮动子元素，父元素的高度确实为0。但是父元素overflow:hidden;后，首先会计算height: auto;的真实高度，由于其触发了BFC，需要包含子元素，所以高度不是0，而是子元素高度。 */
+
+    margin: 100px auto 0 auto;
+    width: 1000px;
+    border: 1px solid rgba(0, 0, 65, 1);
+}
+.wrapper .nowTime{
+    float: left;
+    width: 400px;
+}
+.wrapper .nextTime{
+    float: right;
+    width: 400px;
+}
+.wrapper .title{
+    font-size: 18px;
+    font-weight: 900px;
+    color: #fff;
+    background: deepskyblue;
+    overflow: hidden;
+    /* 子元素span也浮动 */
+}
+.wrapper .title div{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.wrapper .title .left{
+    width: 50px;
+    float: left;
+    cursor: pointer;
+}
+.wrapper .title .left:hover{
+    color: #000;
+}
+.wrapper .title .right{
+    width: 50px;
+    float: right;
+    cursor: pointer;
+}
+.wrapper .title .left:hover{
+    color: #000;
+}
+.wrapper table{
+    width: 400px;
+    text-align: center;
+    border-collapse: collapse;
+    /* border-collapse 属性设置表格的边框是否被合并为一个单一的边框，还是象在标准的 HTML 中那样分开显示。 */
+    color: gray;
+}
+.wrapper table th{
+    border: 1px solid lightslategray;
+    height: 40px;
+}
+.wrapper table td{
+    height: 40px;
+    border: 1px solid grey;
+}
+
+/* 添加类 -> 红色类和蓝色类 */
+.wrapper .red{
+    color: red;
+}
+.wrapper .blue{
+    color: blue;
+}
